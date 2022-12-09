@@ -1,11 +1,14 @@
+var fact = [];
 var promptNumber = prompt("Please enter a number: ");
-alert("Factorial of " + promptNumber + " is " + factorial(promptNumber)); // displays factorial of the prompted number
+var totalResult = factorial(promptNumber).replaceAll(",", "*")
 
-function factorial(num)
-{
-    var value=1; // this sets result=1 for promptNumber < 2 
-    for (var i = 2; i <= num; i++) // for prompted number greater than or equal 2
-        value = value * i; // also we could use value *= i here
-    return value;
+function factorial(num) {
+  var value = 1; // this sets result=1 for promptNumber < 2 
+  fact = [1]
+  for (var i = 2; i <= num; i++) // for prompted number greater than or equal 2
+    fact.push(i);
+    var factString = fact.toString();
+  return factString;
 }
 
+alert("Factorial of " + promptNumber + " is " + totalResult); // displays factorial of the prompted number
